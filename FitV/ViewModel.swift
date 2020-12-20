@@ -33,6 +33,7 @@ class ViewModel {
 
 extension Notification.Name {
     static let correctCodeDidEneter = Notification.Name("correctCodeDidEneter")
+    static let userdidPressStop = Notification.Name("userdidPressStop")
 }
 
 extension ViewModel {

@@ -36,12 +36,10 @@ class SetUpViewController: UIViewController {
         // if code exist this should fire event for state chang in viewmodel observer
         // and also will launch a notification for entering exercise (which we will listen to)
         viewModel.userCode += "A"
-        
     }
     
     
     @IBAction func B_TouchUpInside(_ sender: UIButton) {
-        
     }
     
 }

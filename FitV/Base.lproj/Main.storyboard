@@ -86,17 +86,41 @@
         <!--View Controller-->
         <scene sceneID="GeB-WK-fN3">
             <objects>
-                <viewController id="y2y-g0-Tr2" sceneMemberID="viewController">
+                <viewController id="y2y-g0-Tr2" customClass="ViewController" customModule="FitV" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="feU-R6-1Ni">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SVJ-qs-YL5">
+                                <rect key="frame" x="171.5" y="734" width="71" height="45"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="27"/>
+                                <state key="normal" title="STOP">
+                                    <color key="titleColor" red="0.57874745130000005" green="0.32151988149999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="stopTouchUpInside:" destination="y2y-g0-Tr2" eventType="touchUpInside" id="24r-Wq-Q1K"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7CE-pz-oR9">
+                                <rect key="frame" x="87" y="300.5" width="240" height="305"/>
+                                <color key="backgroundColor" red="0.0048598507420000003" green="0.096086271109999996" blue="0.57499289509999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </imageView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="tKj-CQ-q6G"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="SVJ-qs-YL5" firstAttribute="centerX" secondItem="7CE-pz-oR9" secondAttribute="centerX" id="Jsg-fb-X0M"/>
+                            <constraint firstItem="7CE-pz-oR9" firstAttribute="centerX" secondItem="tKj-CQ-q6G" secondAttribute="centerX" id="RY5-zK-jFJ"/>
+                            <constraint firstItem="7CE-pz-oR9" firstAttribute="centerY" secondItem="tKj-CQ-q6G" secondAttribute="centerY" id="X2l-Li-Z5v"/>
+                            <constraint firstItem="7CE-pz-oR9" firstAttribute="width" secondItem="feU-R6-1Ni" secondAttribute="width" multiplier="0.57971" id="g6I-OQ-XE2"/>
+                            <constraint firstItem="7CE-pz-oR9" firstAttribute="height" secondItem="feU-R6-1Ni" secondAttribute="height" multiplier="0.340402" id="htm-tL-oWU"/>
+                            <constraint firstItem="SVJ-qs-YL5" firstAttribute="top" secondItem="7CE-pz-oR9" secondAttribute="bottom" constant="128.5" id="mrv-yf-FZC"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Doy-iX-URl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="842" y="-297"/>
+            <point key="canvasLocation" x="840.57971014492762" y="-297.32142857142856"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="AGG-ij-tii">
