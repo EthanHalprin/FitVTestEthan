@@ -21,8 +21,7 @@ class ViewController: UIViewController {
     }
     
     @objc func didPressStop(notification: Notification) {
-        print(notification.object ?? "") //myObject
-        print(notification.userInfo ?? "") //[AnyHashable("key"): "Value"]
+        navigationController?.popViewController(animated: true)
     }
 
     @IBAction func stopTouchUpInside(_ sender: UIButton) {

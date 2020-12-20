@@ -26,8 +26,10 @@ class SetUpViewController: UIViewController {
     }
     
     @objc func didUserSuppliedCorrectCode(notification: Notification) {
-        print(notification.object ?? "") //myObject
-        print(notification.userInfo ?? "") //[AnyHashable("key"): "Value"]
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let home = storyBoard.instantiateViewController(withIdentifier: "ViewController") as! ViewController
+        home.viewModel = self.viewModel
+        navigationController?.pushViewController(home, animated: true)
     }
 
 

@@ -23,5 +23,6 @@ enum StateType {
 
 
 class UserState {
+        
     let machine = StateMachine<StateType, EventType>(initialState: .setup)
 }
