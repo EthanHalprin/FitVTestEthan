@@ -19,7 +19,17 @@ class SetUpViewController: UIViewController {
         } catch {
             fatalError("Could not load exercises")
         }
+        
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(didUserSuppliedCorrectCode),
+                                               name: .correctCodeDidEneter, object: nil)
     }
+    
+    @objc func didUserSuppliedCorrectCode(notification: Notification) {
+        print(notification.object ?? "") //myObject
+        print(notification.userInfo ?? "") //[AnyHashable("key"): "Value"]
+    }
+
 
     @IBAction func A_TouchUpInside(_ sender: UIButton) {
         

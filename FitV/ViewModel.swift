@@ -15,12 +15,27 @@ class ViewModel {
         didSet {
             if self.checkCodes(self.userCode) {
                 //stateMachine.changeTo(.practice)
+                NotificationCenter.default.post(name: .correctCodeDidEneter,
+                                                object: "myObject",
+                                                userInfo: ["key": "Value"])
+
             }
         }
     }
     var stateMachine = UserState()
     var exersices = [Exercise]()
     fileprivate var cancellable: AnyCancellable?
+    
+    required init() {
+        
+    }
+}
+
+extension Notification.Name {
+    static let correctCodeDidEneter = Notification.Name("correctCodeDidEneter")
+}
+
+extension ViewModel {
 
     func fetchExercises(_ urlString: String) throws {
         
@@ -52,9 +67,6 @@ class ViewModel {
                 self.cancellable = nil
         }
     }
-}
-
-extension ViewModel {
     
     func checkCodes(_ lookup: String) -> Bool {
         // go thru exercises fetched and see if have code
