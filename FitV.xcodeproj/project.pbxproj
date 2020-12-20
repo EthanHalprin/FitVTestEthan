@@ -81,8 +81,8 @@
 			children = (
 				AAE7304E258F925F00B5D3C8 /* AppDelegate.swift */,
 				AAE73050258F925F00B5D3C8 /* SceneDelegate.swift */,
-				AA350435258F956C008D7472 /* Model.swift */,
 				AAA2D7C3258F9BB800647A17 /* SetUpViewController.swift */,
+				AA350435258F956C008D7472 /* Model.swift */,
 				AAE73052258F925F00B5D3C8 /* ViewController.swift */,
 				AA350431258F934B008D7472 /* ViewModel.swift */,
 				AA350439258F959D008D7472 /* StateMahcine.swift */,

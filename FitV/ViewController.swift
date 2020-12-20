@@ -12,12 +12,11 @@ class ViewController: UIViewController {
     var viewModel: ViewModel!
     
     override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        
+        super.viewDidLoad()        
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(didPressStop),
                                                name: .userdidPressStop, object: nil)
+        runExercises()
     }
     
     @objc func didPressStop(notification: Notification) {
@@ -28,5 +27,19 @@ class ViewController: UIViewController {
         
     }
     
+}
+
+extension ViewController {
+    
+    func runExercises() {
+        
+        for exercise in viewModel.exersices {
+            //
+            // run exercise on screen with timer
+            //
+        }
+        // if reached here - state change to finish
+        
+    }
 }
 

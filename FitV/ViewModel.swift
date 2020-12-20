@@ -14,6 +14,7 @@ class ViewModel {
     var userCode = "" {
         didSet {
             if self.checkCodes(self.userCode) {
+                //sta
                 //stateMachine.changeTo(.practice)
                 NotificationCenter.default.post(name: .correctCodeDidEneter,
                                                 object: "myObject",
