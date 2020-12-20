@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -11,6 +11,7 @@
 		AA350432258F934B008D7472 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA350431258F934B008D7472 /* ViewModel.swift */; };
 		AA350436258F956C008D7472 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA350435258F956C008D7472 /* Model.swift */; };
 		AA35043A258F959D008D7472 /* StateMahcine.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA350439258F959D008D7472 /* StateMahcine.swift */; };
+		AAA2D7C4258F9BB800647A17 /* SetUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA2D7C3258F9BB800647A17 /* SetUpViewController.swift */; };
 		AAE7304F258F925F00B5D3C8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE7304E258F925F00B5D3C8 /* AppDelegate.swift */; };
 		AAE73051258F925F00B5D3C8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE73050258F925F00B5D3C8 /* SceneDelegate.swift */; };
 		AAE73053258F925F00B5D3C8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE73052258F925F00B5D3C8 /* ViewController.swift */; };
@@ -26,6 +27,7 @@
 		AA350431258F934B008D7472 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		AA350435258F956C008D7472 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		AA350439258F959D008D7472 /* StateMahcine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateMahcine.swift; sourceTree = "<group>"; };
+		AAA2D7C3258F9BB800647A17 /* SetUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetUpViewController.swift; sourceTree = "<group>"; };
 		AAE7304B258F925F00B5D3C8 /* FitV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FitV.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAE7304E258F925F00B5D3C8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AAE73050258F925F00B5D3C8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -80,6 +82,7 @@
 				AAE7304E258F925F00B5D3C8 /* AppDelegate.swift */,
 				AAE73050258F925F00B5D3C8 /* SceneDelegate.swift */,
 				AA350435258F956C008D7472 /* Model.swift */,
+				AAA2D7C3258F9BB800647A17 /* SetUpViewController.swift */,
 				AAE73052258F925F00B5D3C8 /* ViewController.swift */,
 				AA350431258F934B008D7472 /* ViewModel.swift */,
 				AA350439258F959D008D7472 /* StateMahcine.swift */,
@@ -97,7 +100,6 @@
 				1926A1481E2891AD22520A57 /* Pods-FitV.debug.xcconfig */,
 				87AF9EFEBC22A38D8A06BEB0 /* Pods-FitV.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -217,6 +219,7 @@
 			files = (
 				AA350436258F956C008D7472 /* Model.swift in Sources */,
 				AA35043A258F959D008D7472 /* StateMahcine.swift in Sources */,
+				AAA2D7C4258F9BB800647A17 /* SetUpViewController.swift in Sources */,
 				AAE73053258F925F00B5D3C8 /* ViewController.swift in Sources */,
 				AAE7304F258F925F00B5D3C8 /* AppDelegate.swift in Sources */,
 				AA350432258F934B008D7472 /* ViewModel.swift in Sources */,

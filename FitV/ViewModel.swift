@@ -11,6 +11,13 @@ import Combine
 
 class ViewModel {
     
+    var userCode = "" {
+        didSet {
+            if self.checkCodes(self.userCode) {
+                //stateMachine.changeTo(.practice)
+            }
+        }
+    }
     var stateMachine = UserState()
     var exersices = [Exercise]()
     fileprivate var cancellable: AnyCancellable?
@@ -31,7 +38,7 @@ class ViewModel {
                 return element.data
             }
             .decode(type: [Exercise].self, decoder: JSONDecoder())
-            .receive(on: DispatchQueue.main) // "Publishing changes from background threads is not allowed.."
+            .receive(on: DispatchQueue.main) 
             .sink(receiveCompletion: { completionError in
                 switch completionError {
                     case .failure(let error):
@@ -44,5 +51,14 @@ class ViewModel {
                 self.exersices = exers
                 self.cancellable = nil
         }
+    }
+}
+
+extension ViewModel {
+    
+    func checkCodes(_ lookup: String) -> Bool {
+        // go thru exercises fetched and see if have code
+        // ...
+        return false
     }
 }
