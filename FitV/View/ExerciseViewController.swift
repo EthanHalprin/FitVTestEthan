@@ -21,6 +21,7 @@ class ExerciseViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
+        runExercises()
     }
 }
 
@@ -44,6 +45,26 @@ extension ExerciseViewController {
 
         workoutImageView.startAnimating()
     }
+    
+    func runExercises() {
+        
+        //  !!!
+        // This is just psuedo placeholder - In reality of course it is required to show
+        // video or AR scene for each with timer
+        // !!!
+        if let exercises = viewModel.exersicesContainer?.exercises {
+            for exercise in exercises {
+                print("Running exercise \(exercise.name) for \(exercise.totalTime)")
+                _ = Timer.scheduledTimer(timeInterval: TimeInterval(exercise.totalTime),
+                                                     target: self,
+                                                     selector: #selector(onTimer),
+                                                     userInfo: nil, repeats: false)
+            }
+        }
+        
+    }
+    
+    @objc func onTimer() {}
 
     
     fileprivate func alert() {

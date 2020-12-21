@@ -14,7 +14,7 @@ class ViewModel {
     let stateMachine = StateMachine()
 
     fileprivate var codesKeeper: SequenceCodesKeeper?
-    fileprivate var exersicesContainer: ExercisesBundle?
+    var exersicesContainer: ExercisesBundle?
     fileprivate var cancellable: AnyCancellable?
     
     func flushInputCode() {
