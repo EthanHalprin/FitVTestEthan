@@ -40,15 +40,15 @@
 		591DEC9C84DC2ACB883C3FE07247604C /* Pods-FitV-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-FitV-frameworks.sh"; sourceTree = "<group>"; };
 		76B7AFDAECFC98FC34EE6BA5D3484878 /* Stateful-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Stateful-Info.plist"; sourceTree = "<group>"; };
 		7A2CEF6D78BDA000936C6A844357F827 /* Stateful.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Stateful.modulemap; sourceTree = "<group>"; };
-		924B221967595BDDF6B852EEB589AD3C /* Pods_FitV.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_FitV.framework; path = "Pods-FitV.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		924B221967595BDDF6B852EEB589AD3C /* Pods_FitV.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FitV.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A13EB1E93E558D8A020D37A454C9921A /* Transition.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Transition.swift; path = Stateful/Classes/Transition.swift; sourceTree = "<group>"; };
 		A1F7CF1718092C27923107A526B60F74 /* StateMachine.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StateMachine.swift; path = Stateful/Classes/StateMachine.swift; sourceTree = "<group>"; };
 		AC8F50601A450EFBBCC7750C8F2F0E84 /* Stateful-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Stateful-dummy.m"; sourceTree = "<group>"; };
 		C33DDC1AC27F7A8EC9D6F68578F0A297 /* Pods-FitV.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-FitV.debug.xcconfig"; sourceTree = "<group>"; };
 		D5B5E07221D1C20AD09A95CB8EFE5DF7 /* Pods-FitV.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-FitV.release.xcconfig"; sourceTree = "<group>"; };
 		DD706BCE2E40B4B3384A8857E36FC0FC /* Stateful.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Stateful.release.xcconfig; sourceTree = "<group>"; };
-		E315027EF4AC86DFD061EEBD5772E16A /* Stateful.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Stateful.framework; path = Stateful.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E315027EF4AC86DFD061EEBD5772E16A /* Stateful.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Stateful.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDED0545F1E883C44FBD72B8D61CA530 /* Pods-FitV-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-FitV-acknowledgements.markdown"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -94,7 +94,6 @@
 				A13EB1E93E558D8A020D37A454C9921A /* Transition.swift */,
 				47571216E3D63FF31A14DBFF38221815 /* Support Files */,
 			);
-			name = Stateful;
 			path = Stateful;
 			sourceTree = "<group>";
 		};
@@ -233,7 +232,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1100;
-				LastUpgradeCheck = 1100;
+				LastUpgradeCheck = 1230;
 			};
 			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 9.3";
@@ -318,7 +317,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/Stateful/Stateful-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/Stateful/Stateful-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -440,6 +439,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -504,6 +504,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -554,7 +555,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/Stateful/Stateful-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/Stateful/Stateful-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

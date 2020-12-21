@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  ExerciseViewController.swift
 //  FitV
 //
 //  Created by Ethan on 20/12/2020.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ExerciseViewController: UIViewController {
 
     var viewModel: ViewModel!
     
@@ -29,11 +29,11 @@ class ViewController: UIViewController {
     
 }
 
-extension ViewController {
+extension ExerciseViewController {
     
     func runExercises() {
         
-        for exercise in viewModel.exersices {
+        for _ in viewModel.exersices {
             //
             // run exercise on screen with timer
             //

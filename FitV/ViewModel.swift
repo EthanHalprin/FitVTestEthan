@@ -11,30 +11,14 @@ import Combine
 
 class ViewModel {
     
-    var userCode = "" {
-        didSet {
-            if self.checkCodes(self.userCode) {
-                //sta
-                //stateMachine.changeTo(.practice)
-                NotificationCenter.default.post(name: .correctCodeDidEneter,
-                                                object: "myObject",
-                                                userInfo: ["key": "Value"])
-
-            }
-        }
-    }
-    var stateMachine = UserState()
+    var userCode = ""
+    var stateMachine = EStateMachine()
     var exersices = [Exercise]()
     fileprivate var cancellable: AnyCancellable?
     
     required init() {
         
     }
-}
-
-extension Notification.Name {
-    static let correctCodeDidEneter = Notification.Name("correctCodeDidEneter")
-    static let userdidPressStop = Notification.Name("userdidPressStop")
 }
 
 extension ViewModel {

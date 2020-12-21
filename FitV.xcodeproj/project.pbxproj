@@ -14,7 +14,7 @@
 		AAA2D7C4258F9BB800647A17 /* SetUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA2D7C3258F9BB800647A17 /* SetUpViewController.swift */; };
 		AAE7304F258F925F00B5D3C8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE7304E258F925F00B5D3C8 /* AppDelegate.swift */; };
 		AAE73051258F925F00B5D3C8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE73050258F925F00B5D3C8 /* SceneDelegate.swift */; };
-		AAE73053258F925F00B5D3C8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE73052258F925F00B5D3C8 /* ViewController.swift */; };
+		AAE73053258F925F00B5D3C8 /* ExerciseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE73052258F925F00B5D3C8 /* ExerciseViewController.swift */; };
 		AAE73056258F925F00B5D3C8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAE73054258F925F00B5D3C8 /* Main.storyboard */; };
 		AAE73058258F926000B5D3C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AAE73057258F926000B5D3C8 /* Assets.xcassets */; };
 		AAE7305B258F926000B5D3C8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAE73059258F926000B5D3C8 /* LaunchScreen.storyboard */; };
@@ -31,7 +31,7 @@
 		AAE7304B258F925F00B5D3C8 /* FitV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FitV.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAE7304E258F925F00B5D3C8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AAE73050258F925F00B5D3C8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		AAE73052258F925F00B5D3C8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		AAE73052258F925F00B5D3C8 /* ExerciseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseViewController.swift; sourceTree = "<group>"; };
 		AAE73055258F925F00B5D3C8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AAE73057258F926000B5D3C8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AAE7305A258F926000B5D3C8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -83,7 +83,7 @@
 				AAE73050258F925F00B5D3C8 /* SceneDelegate.swift */,
 				AAA2D7C3258F9BB800647A17 /* SetUpViewController.swift */,
 				AA350435258F956C008D7472 /* Model.swift */,
-				AAE73052258F925F00B5D3C8 /* ViewController.swift */,
+				AAE73052258F925F00B5D3C8 /* ExerciseViewController.swift */,
 				AA350431258F934B008D7472 /* ViewModel.swift */,
 				AA350439258F959D008D7472 /* StateMahcine.swift */,
 				AAE73054258F925F00B5D3C8 /* Main.storyboard */,
@@ -220,7 +220,7 @@
 				AA350436258F956C008D7472 /* Model.swift in Sources */,
 				AA35043A258F959D008D7472 /* StateMahcine.swift in Sources */,
 				AAA2D7C4258F9BB800647A17 /* SetUpViewController.swift in Sources */,
-				AAE73053258F925F00B5D3C8 /* ViewController.swift in Sources */,
+				AAE73053258F925F00B5D3C8 /* ExerciseViewController.swift in Sources */,
 				AAE7304F258F925F00B5D3C8 /* AppDelegate.swift in Sources */,
 				AA350432258F934B008D7472 /* ViewModel.swift in Sources */,
 				AAE73051258F925F00B5D3C8 /* SceneDelegate.swift in Sources */,
