@@ -122,15 +122,15 @@ extension SetUpViewController {
             keyB.setTitle("2", for: .normal)
             keyC.setTitle("3", for: .normal)
             keyD.setTitle("4", for: .normal)
-            keyE.isHidden = true
-            keyF.isHidden = true
+            keyE.setTitle("5", for: .normal)
+            keyF.setTitle("6", for: .normal)
         } else {
             keyA.setTitle("A", for: .normal)
             keyB.setTitle("B", for: .normal)
             keyC.setTitle("C", for: .normal)
             keyD.setTitle("D", for: .normal)
-            keyE.isHidden = false
-            keyF.isHidden = false
+            keyE.setTitle("E", for: .normal)
+            keyF.setTitle("F", for: .normal)
         }
     }
 }
