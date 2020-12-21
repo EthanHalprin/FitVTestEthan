@@ -85,8 +85,8 @@
 		AAC0D5442590BA5B006E12F3 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				AAC0D5452590BA5B006E12F3 /* StateMachine */,
 				AAC0D54B2590BA5B006E12F3 /* ViewModel.swift */,
+				AAC0D5452590BA5B006E12F3 /* StateMachine */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";

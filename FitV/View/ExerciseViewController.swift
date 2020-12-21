@@ -29,20 +29,19 @@ extension ExerciseViewController {
                                       message: "Choose whether to pause (you can resume it later, which will require a new code) or just to finish it as is",
                                       preferredStyle: .alert)
 
-        alert.addAction(UIAlertAction(title: "Pause", style: .cancel, handler: { _ in self.pause()} ))
-        alert.addAction(UIAlertAction(title: "Finish", style: .destructive, handler: { _ in self.finish()} ))
+        alert.addAction(UIAlertAction(title: "Pause", style: .cancel, handler: { _ in
+            NotificationCenter.default.post(name    : .userDidPause,
+                                            object  : self,
+                                            userInfo: nil)
+        } ))
+        
+        alert.addAction(UIAlertAction(title: "Finish", style: .destructive, handler: { _ in
+            NotificationCenter.default.post(name    : .userDidFinish,
+                                            object  : self,
+                                            userInfo: nil)
+        } ))
 
         self.present(alert, animated: true)
-    }
-    
-    fileprivate func pause() {
-        
-    }
-
-    fileprivate func finish() {
-        NotificationCenter.default.post(name    : .userDidFinish,
-                                        object  : self,
-                                        userInfo: nil)
     }
 }
 
@@ -54,5 +53,7 @@ extension ExerciseViewController: StateRespondibleViewController {
         self.navigationController?.pushViewController(completeVC, animated: true)
     }
     
-    func prev() { }
+    func prev() {
+        self.navigationController?.popViewController(animated: true)
+    }
 }

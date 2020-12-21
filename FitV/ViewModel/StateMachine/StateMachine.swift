@@ -30,6 +30,11 @@ class StateMachine {
                                                selector: #selector(userCompleted),
                                                name: .userDidFinish,
                                                object: nil)
+
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(userPaused),
+                                               name: .userDidPause,
+                                               object: nil)
     }
 }
 
@@ -48,10 +53,18 @@ extension StateMachine {
             current = StateType.finish
         }
     }
+
+    @objc func userPaused(notification: Notification) {
+        if let vc = notification.object as? StateRespondibleViewController {
+            states[current.rawValue].transit(to: .resetup, sender: vc)
+            current = StateType.resetup
+        }
+    }
 }
 
 extension Notification.Name {
     
     static let correctCodeDidEnter = Notification.Name("CorrectCodeDidEnter")
-    static let userDidFinish = Notification.Name("UserDidFinish")
+    static let userDidFinish       = Notification.Name("UserDidFinish")
+    static let userDidPause        = Notification.Name("UserDidPause")
 }
