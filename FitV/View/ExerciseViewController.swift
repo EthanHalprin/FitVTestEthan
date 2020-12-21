@@ -20,11 +20,31 @@ class ExerciseViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.hidesBackButton = true
+        setup()
     }
 }
 
 extension ExerciseViewController {
+    
+    fileprivate func setup() {
+        self.navigationItem.hidesBackButton = true
+        pauseButton.layer.cornerRadius = 9.0
+        pauseButton.layer.borderColor = UIColor.white.cgColor
+        pauseButton.layer.borderWidth = 2.5
+        guard let workoutImageView = UIImageView.fromGif(frame: CGRect(x: 40, y: 250, width: 300, height: 300),
+                                                         resourceName: "workout") else {
+            return
+        }
+        workoutImageView.animationDuration = 1
+        view.addSubview(workoutImageView)
+        NSLayoutConstraint.activate([
+            workoutImageView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+            workoutImageView.centerYAnchor.constraint(equalTo: self.view.centerYAnchor)
+         ])
+
+        workoutImageView.startAnimating()
+    }
+
     
     fileprivate func alert() {
         let alert = UIAlertController(title: "PAUSE",
@@ -44,6 +64,28 @@ extension ExerciseViewController {
         } ))
 
         self.present(alert, animated: true)
+    }
+}
+
+extension UIImageView {
+    static func fromGif(frame: CGRect, resourceName: String) -> UIImageView? {
+        guard let path = Bundle.main.path(forResource: resourceName, ofType: "gif") else {
+            print("Gif does not exist at that path")
+            return nil
+        }
+        let url = URL(fileURLWithPath: path)
+        guard let gifData = try? Data(contentsOf: url),
+            let source =  CGImageSourceCreateWithData(gifData as CFData, nil) else { return nil }
+        var images = [UIImage]()
+        let imageCount = CGImageSourceGetCount(source)
+        for i in 0 ..< imageCount {
+            if let image = CGImageSourceCreateImageAtIndex(source, i, nil) {
+                images.append(UIImage(cgImage: image))
+            }
+        }
+        let gifImageView = UIImageView(frame: frame)
+        gifImageView.animationImages = images
+        return gifImageView
     }
 }
 
