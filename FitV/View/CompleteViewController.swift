@@ -11,12 +11,23 @@ import Foundation
 import FoundationNetworking
 #endif
 
-class CompleteViewController: UIViewController {
+enum Achievement: String {
+    case notBad = "Not bad, try harder next time!"
+    case wellDone = "Well done, you nailed it!"
+    case Champ = "Champion, it’s too easy for you!"
+}
 
+class CompleteViewController: UIViewController {
+ 
+    @IBOutlet weak var resultLabel: UILabel!
+    
+    var acheivement: Achievement?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.hidesBackButton = true
         post()
+        setup()
     }
 }
 extension CompleteViewController {
@@ -44,5 +55,11 @@ extension CompleteViewController {
             print(String(data: data, encoding: .utf8)!)
         }
         task.resume()
+    }
+    
+    fileprivate func setup() {
+        if let acheiver = self.acheivement {
+            resultLabel.text = acheiver.rawValue
+        }
     }
 }

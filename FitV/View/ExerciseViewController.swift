@@ -118,6 +118,12 @@ extension ExerciseViewController: StateRespondibleViewController {
     func next() {
         let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let completeVC = storyBoard.instantiateViewController(withIdentifier: "CompleteViewController") as! CompleteViewController
+        //
+        // Here we will analyze results how much user made when have video
+        // and set 'acheivement' accordingly
+        //
+        completeVC.acheivement = .wellDone
+        
         self.navigationController?.pushViewController(completeVC, animated: true)
     }
 }

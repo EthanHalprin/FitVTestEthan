@@ -182,22 +182,31 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Congrats!!!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sMk-Zf-cMd">
-                                <rect key="frame" x="105" y="429" width="204" height="48"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="trophy-award-icon" translatesAutoresizingMaskIntoConstraints="NO" id="SMF-fD-BDx">
+                                <rect key="frame" x="101" y="363.5" width="212" height="179"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sMk-Zf-cMd">
+                                <rect key="frame" x="207" y="562.5" width="0.0" height="0.0"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="40"/>
-                                <color key="textColor" systemColor="systemPinkColor"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="UOZ-1i-l39"/>
-                        <color key="backgroundColor" systemColor="systemYellowColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="sMk-Zf-cMd" firstAttribute="centerY" secondItem="UOZ-1i-l39" secondAttribute="centerY" id="734-eC-DLc"/>
-                            <constraint firstItem="sMk-Zf-cMd" firstAttribute="width" secondItem="cz7-VD-YBY" secondAttribute="width" multiplier="0.492754" id="bHm-w1-pkc"/>
-                            <constraint firstItem="sMk-Zf-cMd" firstAttribute="centerX" secondItem="UOZ-1i-l39" secondAttribute="centerX" id="dM4-EN-iPq"/>
+                            <constraint firstItem="sMk-Zf-cMd" firstAttribute="bottom" secondItem="SMF-fD-BDx" secondAttribute="bottom" constant="20" id="6vt-yh-Ijs"/>
+                            <constraint firstItem="sMk-Zf-cMd" firstAttribute="centerX" secondItem="UOZ-1i-l39" secondAttribute="centerX" id="80m-zN-5Sr"/>
+                            <constraint firstItem="SMF-fD-BDx" firstAttribute="centerX" secondItem="UOZ-1i-l39" secondAttribute="centerX" id="AjK-71-bgR"/>
+                            <constraint firstItem="SMF-fD-BDx" firstAttribute="centerY" secondItem="UOZ-1i-l39" secondAttribute="centerY" id="Ec9-f4-hEE"/>
+                            <constraint firstItem="SMF-fD-BDx" firstAttribute="width" secondItem="cz7-VD-YBY" secondAttribute="width" multiplier="0.512" id="ScP-aa-pb4"/>
+                            <constraint firstItem="SMF-fD-BDx" firstAttribute="height" secondItem="cz7-VD-YBY" secondAttribute="height" multiplier="0.2" id="cvD-P8-ngL"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="resultLabel" destination="sMk-Zf-cMd" id="5Wb-cX-AAa"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fDc-j2-Dyj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -223,17 +232,12 @@
         </scene>
     </scenes>
     <resources>
+        <image name="trophy-award-icon" width="640" height="480"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
-        <systemColor name="systemPinkColor">
-            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
         <systemColor name="systemRedColor">
             <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemYellowColor">
-            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
