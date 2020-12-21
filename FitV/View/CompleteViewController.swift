@@ -22,34 +22,27 @@ class CompleteViewController: UIViewController {
 extension CompleteViewController {
 
     /*
-        Hardcoded exercise for now but received Status Code: 200 OK
+        Hardcoded exercise for now, but received Status Code: 200 OK
      */
     func post() {
-        let semaphore = DispatchSemaphore (value: 0)
-
         let parameters = "{\n    \"total_time_completed\" : 1,\n    \"exercises_completed\" : {\n        \"name\" : \"squat\",\n        \"total_time\" : 20 \n    }\n}"
         let postData = parameters.data(using: .utf8)
-
         var request = URLRequest(url: URL(string: "https://ios-interviews.dev.fitvdev.com/addWorkoutSummary")!,timeoutInterval: Double.infinity)
+        
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-
         request.httpMethod = "POST"
         request.httpBody = postData
 
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
             guard let data = data else {
                 print(String(describing: error))
-                semaphore.signal()
                 return
             }
             if let resp = response {
                 dump(resp)
             }
             print(String(data: data, encoding: .utf8)!)
-            semaphore.signal()
         }
-
         task.resume()
-        semaphore.wait()
     }
 }
