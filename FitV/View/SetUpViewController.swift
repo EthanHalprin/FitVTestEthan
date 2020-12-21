@@ -10,8 +10,9 @@ import UIKit
 class SetUpViewController: UIViewController {
     
     var viewModel = ViewModel()
-    @IBOutlet weak var inputLabel: UILabel!
-
+    
+    @IBOutlet weak var inputTextField: UITextField!
+    
     @IBOutlet weak var keyA: UIButton!
     @IBOutlet weak var keyB: UIButton!
     @IBOutlet weak var keyC: UIButton!
@@ -23,10 +24,8 @@ class SetUpViewController: UIViewController {
         
         super.viewDidLoad()
         
-        inputLabel.backgroundColor = UIColor.cyan
-        inputLabel.layer.borderColor = UIColor.black.cgColor
-        inputLabel.layer.borderWidth = 1.5
-        inputLabel.layer.cornerRadius = 5.0
+        inputTextField.inputView = UIView()
+        inputTextField.isEnabled = false
         
         do {
             try viewModel.fetch("https://ios-interviews.dev.fitvdev.com/getWorkoutDetails")
@@ -42,7 +41,7 @@ class SetUpViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        self.inputLabel.text?.removeAll()
+        self.inputTextField.text?.removeAll()
         self.viewModel.flushInputCode()
     }
 
@@ -80,7 +79,7 @@ extension SetUpViewController {
     }
     
     fileprivate func didUserTouchUpInside(_ input: String) {
-        inputLabel.text! += "*"
+        inputTextField.text! += "*"
         var adder = String()
         if viewModel.stateMachine.current == StateType.resetup {
             adder = String(Array(input)[0].asciiValue! - Array("a")[0].asciiValue! + 1)
@@ -110,7 +109,7 @@ extension SetUpViewController {
                                       message: message,
                                       preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Retry", style: .cancel, handler: { _ in
-            self.inputLabel.text?.removeAll()
+            self.inputTextField.text?.removeAll()
             self.viewModel.flushInputCode()
         } ))
         self.present(alert, animated: true)
