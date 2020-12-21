@@ -23,3 +23,7 @@ protocol StateRespondibleViewController {
     func next()
     func prev()
 }
+
+protocol CodeEvaluatable {
+    func scan(_ code: String) -> Bool
+}

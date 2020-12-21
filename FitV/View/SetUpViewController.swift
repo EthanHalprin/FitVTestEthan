@@ -23,7 +23,7 @@ class SetUpViewController: UIViewController {
     }
 
     @IBAction func A_TouchUpInside(_ sender: UIButton) {
-        if let notificationName = viewModel.checkCode("A") {
+        if let notificationName = viewModel.scanCode("A") {
             NotificationCenter.default.post(name    : notificationName,
                                             object  : self,
                                             userInfo: nil)
@@ -31,7 +31,7 @@ class SetUpViewController: UIViewController {
     }
     
     @IBAction func B_TouchUpInside(_ sender: UIButton) {
-        if let notificationName = viewModel.checkCode("B") {
+        if let notificationName = viewModel.scanCode("B") {
             NotificationCenter.default.post(name    : notificationName,
                                             object  : self,
                                             userInfo: nil)

@@ -22,3 +22,8 @@ class SetupState: State {
     }
 }
 
+extension SetupState: CodeEvaluatable {
+    func scan(_ code: String) -> Bool {
+        return code == "AAA"
+    }
+}

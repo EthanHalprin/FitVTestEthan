@@ -19,14 +19,16 @@ class ViewModel {
 
 extension ViewModel {
 
-    func checkCode(_ addenda: String) -> Notification.Name? {
+    func scanCode(_ addenda: String) -> Notification.Name? {
+        
+        guard stateMachine.states[stateMachine.current.rawValue] is CodeEvaluatable else {
+            return nil
+        }
         
         userCode += addenda
-        
         var notificationName: Notification.Name?
         
-        if (self.stateMachine.current == StateType.setup   && self.userCode == "AAA") ||
-           (self.stateMachine.current == StateType.resetup && self.userCode == "BBB") {
+        if (stateMachine.states[stateMachine.current.rawValue] as! CodeEvaluatable).scan(userCode) {
             notificationName = .correctCodeDidEnter
             userCode.removeAll()
         }
