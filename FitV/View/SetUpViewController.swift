@@ -24,8 +24,7 @@ class SetUpViewController: UIViewController {
         
         super.viewDidLoad()
         
-        inputTextField.inputView = UIView()
-        inputTextField.isEnabled = false
+        setup()
         
         do {
             try viewModel.fetch("https://ios-interviews.dev.fitvdev.com/getWorkoutDetails")
@@ -71,6 +70,17 @@ class SetUpViewController: UIViewController {
 }
 
 extension SetUpViewController {
+    
+    fileprivate func setup() {
+        inputTextField.inputView = UIView()
+        inputTextField.isEnabled = false
+        keyA.layer.cornerRadius = 7.0
+        keyB.layer.cornerRadius = 7.0
+        keyC.layer.cornerRadius = 7.0
+        keyD.layer.cornerRadius = 7.0
+        keyE.layer.cornerRadius = 7.0
+        keyF.layer.cornerRadius = 7.0
+    }
     
     fileprivate func notifyMatch() {
         NotificationCenter.default.post(name    : .correctCodeDidEnter,
