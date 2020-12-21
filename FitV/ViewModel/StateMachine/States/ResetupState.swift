@@ -15,6 +15,7 @@ class ResetupState: State {
         case .resetup:
             break
         case .practice:
+            sender.next()
             break
         case .finish:
             break

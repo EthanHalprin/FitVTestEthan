@@ -23,16 +23,19 @@ class SetUpViewController: UIViewController {
     }
 
     @IBAction func A_TouchUpInside(_ sender: UIButton) {
-        viewModel.userCode += "A"
-        
-        if viewModel.userCode == "AA" {
-            NotificationCenter.default.post(name    : .correctCodeDidEnter,
+        if let notificationName = viewModel.checkCode("A") {
+            NotificationCenter.default.post(name    : notificationName,
                                             object  : self,
                                             userInfo: nil)
         }
     }
     
     @IBAction func B_TouchUpInside(_ sender: UIButton) {
+        if let notificationName = viewModel.checkCode("B") {
+            NotificationCenter.default.post(name    : notificationName,
+                                            object  : self,
+                                            userInfo: nil)
+        }
     }
 }
 

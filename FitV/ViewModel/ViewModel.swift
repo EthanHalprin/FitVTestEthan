@@ -11,14 +11,29 @@ import Combine
 
 class ViewModel {
     
-    var userCode = ""
-    var stateMachine = StateMachine()
-    var exersices = [Exercise]()
+    fileprivate var userCode = ""
+    fileprivate var stateMachine = StateMachine()
+    fileprivate var exersices = [Exercise]()
     fileprivate var cancellable: AnyCancellable?
 }
 
 extension ViewModel {
 
+    func checkCode(_ addenda: String) -> Notification.Name? {
+        
+        userCode += addenda
+        
+        var notificationName: Notification.Name?
+        
+        if (self.stateMachine.current == StateType.setup   && self.userCode == "AAA") ||
+           (self.stateMachine.current == StateType.resetup && self.userCode == "BBB") {
+            notificationName = .correctCodeDidEnter
+            userCode.removeAll()
+        }
+        
+        return notificationName
+    }
+    
     func fetchExercises(_ urlString: String) throws {
         
         guard let url = URL(string: urlString) else {
