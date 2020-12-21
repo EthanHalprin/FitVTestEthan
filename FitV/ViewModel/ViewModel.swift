@@ -13,7 +13,7 @@ class ViewModel {
     
     fileprivate var userCode = ""
     fileprivate var stateMachine = StateMachine()
-    fileprivate var exersices = [Exercise]()
+    fileprivate var exersicesContainer: ExercisesBundle?
     fileprivate var cancellable: AnyCancellable?
 }
 
@@ -39,11 +39,9 @@ extension ViewModel {
     func fetchExercises(_ urlString: String) throws {
         
         guard let url = URL(string: urlString) else {
-            print("ERROR: No url")
-            return
+            fatalError("Bad url for exercises")
         }
         cancellable = URLSession.shared.dataTaskPublisher(for: url)
-            //.map { $0.data }
             .tryMap() { element -> Data in
                 guard let httpResponse = element.response as? HTTPURLResponse,
                           httpResponse.statusCode == 200 else {
@@ -51,7 +49,7 @@ extension ViewModel {
                 }
                 return element.data
             }
-            .decode(type: [Exercise].self, decoder: JSONDecoder())
+            .decode(type: ExercisesBundle.self, decoder: JSONDecoder())
             .receive(on: DispatchQueue.main) 
             .sink(receiveCompletion: { completionError in
                 switch completionError {
@@ -60,9 +58,9 @@ extension ViewModel {
                     case .finished:
                     break
                 }
-            }) { exers in
-                dump(exers)
-                self.exersices = exers
+            }) { bundle in
+                dump(bundle)
+                self.exersicesContainer = bundle
                 self.cancellable = nil
         }
     }

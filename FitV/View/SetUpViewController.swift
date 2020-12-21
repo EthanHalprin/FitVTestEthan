@@ -15,11 +15,11 @@ class SetUpViewController: UIViewController {
         
         super.viewDidLoad()
         
-//        do {
-//            try viewModel.fetchExercises("http://fitv.exercises.com")
-//        } catch {
-//            fatalError("Could not load exercises")
-//        }
+        do {
+            try viewModel.fetchExercises("https://ios-interviews.dev.fitvdev.com/getWorkoutDetails")
+        } catch {
+            fatalError("Could not load exercises")
+        }
     }
 
     @IBAction func A_TouchUpInside(_ sender: UIButton) {

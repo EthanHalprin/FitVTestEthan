@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		AA1D94802590C55A0002C5D6 /* CompleteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1D947F2590C55A0002C5D6 /* CompleteViewController.swift */; };
 		AA1D94832590C8BB0002C5D6 /* StateDefs.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1D94822590C8BB0002C5D6 /* StateDefs.swift */; };
-		AAC0D53C2590BA43006E12F3 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC0D53B2590BA43006E12F3 /* Model.swift */; };
+		AAC0D53C2590BA43006E12F3 /* ExercisesBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC0D53B2590BA43006E12F3 /* ExercisesBundle.swift */; };
 		AAC0D5412590BA52006E12F3 /* ExerciseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC0D53F2590BA52006E12F3 /* ExerciseViewController.swift */; };
 		AAC0D5422590BA52006E12F3 /* SetUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC0D5402590BA52006E12F3 /* SetUpViewController.swift */; };
 		AAC0D54C2590BA5B006E12F3 /* StateMachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC0D5462590BA5B006E12F3 /* StateMachine.swift */; };
@@ -28,7 +28,7 @@
 /* Begin PBXFileReference section */
 		AA1D947F2590C55A0002C5D6 /* CompleteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteViewController.swift; sourceTree = "<group>"; };
 		AA1D94822590C8BB0002C5D6 /* StateDefs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateDefs.swift; sourceTree = "<group>"; };
-		AAC0D53B2590BA43006E12F3 /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		AAC0D53B2590BA43006E12F3 /* ExercisesBundle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExercisesBundle.swift; sourceTree = "<group>"; };
 		AAC0D53F2590BA52006E12F3 /* ExerciseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseViewController.swift; sourceTree = "<group>"; };
 		AAC0D5402590BA52006E12F3 /* SetUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetUpViewController.swift; sourceTree = "<group>"; };
 		AAC0D5462590BA5B006E12F3 /* StateMachine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StateMachine.swift; sourceTree = "<group>"; };
@@ -67,7 +67,7 @@
 		AAC0D53A2590BA43006E12F3 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				AAC0D53B2590BA43006E12F3 /* Model.swift */,
+				AAC0D53B2590BA43006E12F3 /* ExercisesBundle.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -217,7 +217,7 @@
 			files = (
 				AAC0D5542590C027006E12F3 /* CompletedState.swift in Sources */,
 				AAC0D5502590BA5B006E12F3 /* ViewModel.swift in Sources */,
-				AAC0D53C2590BA43006E12F3 /* Model.swift in Sources */,
+				AAC0D53C2590BA43006E12F3 /* ExercisesBundle.swift in Sources */,
 				AA1D94832590C8BB0002C5D6 /* StateDefs.swift in Sources */,
 				AAC0D54C2590BA5B006E12F3 /* StateMachine.swift in Sources */,
 				AAE7304F258F925F00B5D3C8 /* AppDelegate.swift in Sources */,
