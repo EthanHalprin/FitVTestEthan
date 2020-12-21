@@ -16,6 +16,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kob-Ou-Qfj">
+                                <rect key="frame" x="138.5" y="393" width="137" height="30"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="MPV-hT-BTb">
                                 <rect key="frame" x="62" y="363" width="290" height="224"/>
                                 <subviews>
@@ -23,10 +30,11 @@
                                         <rect key="frame" x="0.0" y="0.0" width="290" height="194"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GGF-Cg-9DC" userLabel="A">
-                                                <rect key="frame" x="0.0" y="82" width="96.5" height="30"/>
+                                                <rect key="frame" x="0.0" y="80.5" width="96.5" height="33"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <state key="normal" title="A"/>
                                                 <connections>
-                                                    <action selector="A_TouchUpInside:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0Bb-rb-2lt"/>
+                                                    <action selector="A_TouchUpInside:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FXJ-Wx-fpI"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uyL-mw-s7L" userLabel="B">
@@ -39,6 +47,9 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j4S-cn-dZc" userLabel="C">
                                                 <rect key="frame" x="193.5" y="82" width="96.5" height="30"/>
                                                 <state key="normal" title="C"/>
+                                                <connections>
+                                                    <action selector="C_TouchUpInside:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ll5-wn-DZF"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -48,14 +59,23 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RAP-IZ-683" userLabel="D">
                                                 <rect key="frame" x="0.0" y="0.0" width="96.5" height="30"/>
                                                 <state key="normal" title="D"/>
+                                                <connections>
+                                                    <action selector="D_TouchUpInside:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LWt-dy-EmS"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e0b-nx-nhH" userLabel="E">
                                                 <rect key="frame" x="96.5" y="0.0" width="97" height="30"/>
                                                 <state key="normal" title="E"/>
+                                                <connections>
+                                                    <action selector="E_TouchUpInside:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aDZ-QK-McE"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zqb-Uu-h53" userLabel="F">
                                                 <rect key="frame" x="193.5" y="0.0" width="96.5" height="30"/>
                                                 <state key="normal" title="F"/>
+                                                <connections>
+                                                    <action selector="F_TouchUpInside:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jTs-yO-tY0"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
@@ -69,12 +89,18 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="MPV-hT-BTb" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.25" id="9fA-5Y-l30"/>
+                            <constraint firstItem="Kob-Ou-Qfj" firstAttribute="top" secondItem="MPV-hT-BTb" secondAttribute="top" constant="30" id="ACS-Ya-dbH"/>
                             <constraint firstItem="MPV-hT-BTb" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="JTC-yr-Dsb"/>
+                            <constraint firstItem="Kob-Ou-Qfj" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="NWB-ou-EKB"/>
+                            <constraint firstItem="Kob-Ou-Qfj" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.33" id="R2n-pG-82g"/>
                             <constraint firstItem="MPV-hT-BTb" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.7" id="lzk-jk-W9A"/>
                             <constraint firstItem="MPV-hT-BTb" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="njb-i8-rph"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="984-t2-Oeo"/>
+                    <connections>
+                        <outlet property="inputLabel" destination="Kob-Ou-Qfj" id="ZCY-wM-DG6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

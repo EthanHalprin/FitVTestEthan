@@ -10,31 +10,66 @@ import UIKit
 class SetUpViewController: UIViewController {
     
     var viewModel = ViewModel()
+    @IBOutlet weak var inputLabel: UILabel!
     
     override func viewDidLoad() {
         
         super.viewDidLoad()
         
         do {
-            try viewModel.fetchExercises("https://ios-interviews.dev.fitvdev.com/getWorkoutDetails")
+            try viewModel.fetch("https://ios-interviews.dev.fitvdev.com/getWorkoutDetails")
         } catch {
             fatalError("Could not load exercises")
         }
     }
 
     @IBAction func A_TouchUpInside(_ sender: UIButton) {
-        if let notificationName = viewModel.scanCode("A") {
-            NotificationCenter.default.post(name    : notificationName,
-                                            object  : self,
-                                            userInfo: nil)
-        }
+        didUserTouchUpInside("a")
     }
     
     @IBAction func B_TouchUpInside(_ sender: UIButton) {
-        if let notificationName = viewModel.scanCode("B") {
-            NotificationCenter.default.post(name    : notificationName,
-                                            object  : self,
-                                            userInfo: nil)
+        didUserTouchUpInside("b")
+    }
+    
+    @IBAction func C_TouchUpInside(_ sender: UIButton) {
+        didUserTouchUpInside("c")
+    }
+    
+    @IBAction func D_TouchUpInside(_ sender: UIButton) {
+        didUserTouchUpInside("d")
+    }
+        
+    @IBAction func E_TouchUpInside(_ sender: UIButton) {
+        didUserTouchUpInside("e")
+    }
+    
+    @IBAction func F_TouchUpInside(_ sender: UIButton) {
+        didUserTouchUpInside("f")
+    }
+}
+
+extension SetUpViewController {
+    
+    func notify() {
+        NotificationCenter.default.post(name    : .correctCodeDidEnter,
+                                        object  : self,
+                                        userInfo: nil)
+    }
+    
+    fileprivate func didUserTouchUpInside(_ input: String) {
+        inputLabel.text! += "*"
+        let result = viewModel.scanCode(input)
+        switch result {
+        case .codesUnavailable:
+            fatalError("Could not parse or fetch workout codes")
+        case .match:
+            self.notify()
+        case .mismatch:
+            break
+        case .overflow:
+            break
+        case .forbidden:
+            fatalError("Verifying code is out of this state's scope")
         }
     }
 }

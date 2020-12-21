@@ -11,32 +11,20 @@ import Combine
 
 class ViewModel {
     
-    fileprivate var userCode = ""
+    fileprivate var codesKeeper: SequenceCodesKeeper?
     fileprivate var stateMachine = StateMachine()
     fileprivate var exersicesContainer: ExercisesBundle?
     fileprivate var cancellable: AnyCancellable?
-}
 
-extension ViewModel {
-
-    func scanCode(_ addenda: String) -> Notification.Name? {
-        
-        guard stateMachine.states[stateMachine.current.rawValue] is CodeEvaluatable else {
-            return nil
+    func scanCode(_ adder: String) -> ScanResult {
+        if let coder = codesKeeper {
+            return coder.concatAndTest(adder, state: stateMachine.current)
+        } else {
+            return ScanResult.codesUnavailable
         }
-        
-        userCode += addenda
-        var notificationName: Notification.Name?
-        
-        if (stateMachine.states[stateMachine.current.rawValue] as! CodeEvaluatable).scan(userCode) {
-            notificationName = .correctCodeDidEnter
-            userCode.removeAll()
-        }
-        
-        return notificationName
     }
     
-    func fetchExercises(_ urlString: String) throws {
+    func fetch(_ urlString: String) throws {
         
         guard let url = URL(string: urlString) else {
             fatalError("Bad url for exercises")
@@ -61,13 +49,26 @@ extension ViewModel {
             }) { bundle in
                 dump(bundle)
                 self.exersicesContainer = bundle
+                self.parseCodes()
                 self.cancellable = nil
         }
     }
-    
-    func checkCodes(_ lookup: String) -> Bool {
-        // go thru exercises fetched and see if have code
-        // ...
-        return false
+}
+extension ViewModel {
+    fileprivate func parseCodes() {
+        if let container = self.exersicesContainer {
+            self.codesKeeper = SequenceCodesKeeper(codeLen: container.setupSequence.count)
+            self.codesKeeper!.setupSequence = container.setupSequence
+            for seq in container.reSetupSequence {
+                self.codesKeeper!.resetupSequences.append(String(seq.code))
+            }
+        }
     }
+}
+
+enum ScanError: Error {
+    case codesBaseUnavailable
+    case notCodeEvaluater
+    case wrongCode
+    case isOutOfBounds
 }
