@@ -12,7 +12,7 @@ import Combine
 class ViewModel {
     
     var userCode = ""
-    var stateMachine = EStateMachine()
+    var stateMachine = StateMachine()
     var exersices = [Exercise]()
     fileprivate var cancellable: AnyCancellable?
 }

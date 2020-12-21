@@ -6,7 +6,7 @@
 //
 import Foundation
 
-class EStateMachine {
+class StateMachine {
     
     var current = StateType.setup
     var states  = [State]()
@@ -33,7 +33,7 @@ class EStateMachine {
     }
 }
 
-extension EStateMachine {
+extension StateMachine {
     
     @objc func correctCodeIn(notification: Notification) {
         if let vc = notification.object as? StateRespondibleViewController {
