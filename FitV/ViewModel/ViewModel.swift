@@ -11,11 +11,12 @@ import Combine
 
 class ViewModel {
     
+    let stateMachine = StateMachine()
+
     fileprivate var codesKeeper: SequenceCodesKeeper?
-    fileprivate var stateMachine = StateMachine()
     fileprivate var exersicesContainer: ExercisesBundle?
     fileprivate var cancellable: AnyCancellable?
-
+    
     func flushInputCode() {
         codesKeeper?.flush()
     }

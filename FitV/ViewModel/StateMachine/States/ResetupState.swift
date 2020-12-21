@@ -22,9 +22,3 @@ class ResetupState: State {
         }
     }
 }
-
-extension ResetupState: CodeEvaluatable {
-    func scan(_ code: String) -> Bool {
-        return code == "BBB"
-    }
-}

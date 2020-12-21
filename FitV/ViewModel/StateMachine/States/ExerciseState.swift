@@ -13,6 +13,7 @@ class ExerciseState: State {
         case .setup:
             break
         case .resetup:
+            
             sender.prev()
         case .practice:
             break

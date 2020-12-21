@@ -7,9 +7,11 @@
 
 import UIKit
 
+
 class ExerciseViewController: UIViewController {
 
     var viewModel: ViewModel!
+    
     @IBOutlet var pauseButton: UIButton!
     
     @IBAction func pauseTouchUpInside(_ sender: UIButton) {
@@ -19,7 +21,6 @@ class ExerciseViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()        
     }
-
 }
 
 extension ExerciseViewController {
@@ -46,14 +47,13 @@ extension ExerciseViewController {
 }
 
 extension ExerciseViewController: StateRespondibleViewController {
+    func prev() {
+        self.navigationController?.popViewController(animated: true)
+    }
     
     func next() {
         let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let completeVC = storyBoard.instantiateViewController(withIdentifier: "CompleteViewController") as! CompleteViewController
         self.navigationController?.pushViewController(completeVC, animated: true)
-    }
-    
-    func prev() {
-        self.navigationController?.popViewController(animated: true)
     }
 }

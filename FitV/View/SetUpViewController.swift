@@ -11,17 +11,33 @@ class SetUpViewController: UIViewController {
     
     var viewModel = ViewModel()
     @IBOutlet weak var inputLabel: UILabel!
-    @IBOutlet weak var feedbackLabel: UILabel!
+
+    @IBOutlet weak var keyA: UIButton!
+    @IBOutlet weak var keyB: UIButton!
+    @IBOutlet weak var keyC: UIButton!
+    @IBOutlet weak var keyD: UIButton!
+    @IBOutlet weak var keyE: UIButton!
+    @IBOutlet weak var keyF: UIButton!
     
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        
+        inputLabel.backgroundColor = UIColor.cyan
+        inputLabel.layer.borderColor = UIColor.black.cgColor
+        inputLabel.layer.borderWidth = 1.5
+        inputLabel.layer.cornerRadius = 5.0
         
         do {
             try viewModel.fetch("https://ios-interviews.dev.fitvdev.com/getWorkoutDetails")
         } catch {
             fatalError("Could not load exercises")
         }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        toggleNumKeys(viewModel.stateMachine.current == StateType.resetup)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -65,7 +81,13 @@ extension SetUpViewController {
     
     fileprivate func didUserTouchUpInside(_ input: String) {
         inputLabel.text! += "*"
-        let result = viewModel.scanCode(input)
+        var adder = String()
+        if viewModel.stateMachine.current == StateType.resetup {
+            adder = String(Array(input)[0].asciiValue! - Array("a")[0].asciiValue! + 1)
+        } else {
+            adder = input
+        }
+        let result = viewModel.scanCode(adder)
         switch result {
         case .codesUnavailable:
             print("Could not parse or fetch workout codes")
@@ -93,10 +115,28 @@ extension SetUpViewController {
         } ))
         self.present(alert, animated: true)
     }
+    
+    fileprivate func toggleNumKeys(_ isNumeric: Bool) {
+        if isNumeric {
+            keyA.setTitle("1", for: .normal)
+            keyB.setTitle("2", for: .normal)
+            keyC.setTitle("3", for: .normal)
+            keyD.setTitle("4", for: .normal)
+            keyE.isHidden = true
+            keyF.isHidden = true
+        } else {
+            keyA.setTitle("A", for: .normal)
+            keyB.setTitle("B", for: .normal)
+            keyC.setTitle("C", for: .normal)
+            keyD.setTitle("D", for: .normal)
+            keyE.isHidden = false
+            keyF.isHidden = false
+        }
+    }
 }
 
 extension SetUpViewController: StateRespondibleViewController {
-    
+
     func next() {
         let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let exerciseVC = storyBoard.instantiateViewController(withIdentifier: "ExerciseViewController") as! ExerciseViewController
@@ -104,5 +144,6 @@ extension SetUpViewController: StateRespondibleViewController {
         self.navigationController?.pushViewController(exerciseVC, animated: true)
     }
     
-    func prev() { }
+    func prev() {
+    }
 }

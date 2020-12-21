@@ -43,7 +43,7 @@ class SequenceCodesKeeper {
         }
         
         if (state == .setup   && setupSequence == currCode) ||
-           (state == .resetup && resetupSequences.contains(currCode + adder)) {
+           (state == .resetup && resetupSequences.contains(currCode)) {
             flush()
             return .match
         } else {
