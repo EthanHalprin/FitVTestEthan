@@ -18,7 +18,7 @@
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kob-Ou-Qfj">
                                 <rect key="frame" x="138.5" y="393" width="137" height="30"/>
-                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -84,21 +84,33 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="16z-hH-PQ1" userLabel="Feedback Label">
+                                <rect key="frame" x="138.5" y="597" width="137" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.62352941179999999" blue="0.039215686270000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="MPV-hT-BTb" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.25" id="9fA-5Y-l30"/>
                             <constraint firstItem="Kob-Ou-Qfj" firstAttribute="top" secondItem="MPV-hT-BTb" secondAttribute="top" constant="30" id="ACS-Ya-dbH"/>
+                            <constraint firstItem="16z-hH-PQ1" firstAttribute="width" secondItem="Kob-Ou-Qfj" secondAttribute="width" id="D3P-GV-4dd"/>
+                            <constraint firstItem="16z-hH-PQ1" firstAttribute="centerX" secondItem="e7s-4U-KRO" secondAttribute="centerX" id="DOT-N3-G60"/>
                             <constraint firstItem="MPV-hT-BTb" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="JTC-yr-Dsb"/>
                             <constraint firstItem="Kob-Ou-Qfj" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="NWB-ou-EKB"/>
+                            <constraint firstItem="16z-hH-PQ1" firstAttribute="bottom" secondItem="MPV-hT-BTb" secondAttribute="bottom" constant="40" id="OG1-qu-vPV"/>
                             <constraint firstItem="Kob-Ou-Qfj" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.33" id="R2n-pG-82g"/>
                             <constraint firstItem="MPV-hT-BTb" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.7" id="lzk-jk-W9A"/>
                             <constraint firstItem="MPV-hT-BTb" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="njb-i8-rph"/>
+                            <constraint firstItem="16z-hH-PQ1" firstAttribute="height" secondItem="Kob-Ou-Qfj" secondAttribute="height" id="pz5-re-SEj"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="984-t2-Oeo"/>
                     <connections>
+                        <outlet property="feedbackLabel" destination="16z-hH-PQ1" id="eIP-J5-Je0"/>
                         <outlet property="inputLabel" destination="Kob-Ou-Qfj" id="ZCY-wM-DG6"/>
                     </connections>
                 </viewController>

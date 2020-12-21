@@ -16,6 +16,18 @@ class ViewModel {
     fileprivate var exersicesContainer: ExercisesBundle?
     fileprivate var cancellable: AnyCancellable?
 
+    func flushInputCode() {
+        codesKeeper?.flush()
+    }
+    
+    func inputCodeCurrLen() -> Int {
+        var len = 0
+        if let coder = codesKeeper {
+            len = coder.currCode.count
+        }
+        return len
+    }
+    
     func scanCode(_ adder: String) -> ScanResult {
         if let coder = codesKeeper {
             return coder.concatAndTest(adder, state: stateMachine.current)
