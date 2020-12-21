@@ -1,11 +1,11 @@
 //
-//  StateMahcine.swift
+//  StateMachine.swift
 //  FitV
 //
 //  Created by Ethan on 20/12/2020.
 //
 import Foundation
-import UIKit
+
 
 enum StateType: Int {
     case setup = 0
@@ -13,52 +13,13 @@ enum StateType: Int {
     case practice = 2
 }
 
-protocol StateRespondibleViewController {
-    func next()
-    func prev()
-}
-
 protocol State {
     func transit(to target: StateType, sender: StateRespondibleViewController) -> Void
 }
 
-class SetupState: State {
-    func transit(to target: StateType, sender: StateRespondibleViewController) -> Void {
-        switch target {
-        case .setup:
-            break
-        case .resetup:
-            break
-        case .practice:
-            sender.next()
-        }
-    }
-}
-
-class ExerciseState: State {
-    func transit(to target: StateType, sender: StateRespondibleViewController) -> Void {
-        switch target {
-        case .setup:
-            break
-        case .resetup:
-            sender.prev()
-        case .practice:
-            break
-        }
-    }
-}
-
-class SummaryState: State {
-    func transit(to target: StateType, sender: StateRespondibleViewController) -> Void {
-        switch target {
-        case .setup:
-            break
-        case .resetup:
-            break
-        case .practice:
-            break
-        }
-    }
+protocol StateRespondibleViewController {
+    func next()
+    func prev()
 }
 
 class EStateMachine {
@@ -69,7 +30,7 @@ class EStateMachine {
     init() {
         states.append(SetupState())
         states.append(ExerciseState())
-        states.append(SummaryState())
+        states.append(PresetupState())
         
         observe()
     }
@@ -91,5 +52,5 @@ class EStateMachine {
 
 extension Notification.Name {
     static let correctCodeDidEnter = Notification.Name("CorrectCodeDidEnter")
-    static let userdidPressStop = Notification.Name("userdidPressStop")
+    static let userdidPressStop    = Notification.Name("userdidPressStop")
 }

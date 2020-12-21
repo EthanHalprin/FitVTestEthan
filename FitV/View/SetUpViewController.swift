@@ -45,7 +45,5 @@ extension SetUpViewController: StateRespondibleViewController {
         self.navigationController?.pushViewController(exerciseVC, animated: true)
     }
     
-    func prev() {
-        
-    }
+    func prev() { }
 }
