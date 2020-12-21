@@ -1,5 +1,5 @@
 //
-//  SetupState.swift
+//  ResetupState.swift
 //  FitV
 //
 //  Created by Ethan on 21/12/2020.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-class PresetupState: State {
+class ResetupState: State {
     func transit(to target: StateType, sender: StateRespondibleViewController) -> Void {
         switch target {
         case .setup:
@@ -15,6 +15,8 @@ class PresetupState: State {
         case .resetup:
             break
         case .practice:
+            break
+        case .finish:
             break
         }
     }

@@ -16,6 +16,8 @@ class ExerciseState: State {
             sender.prev()
         case .practice:
             break
+        case .finish:
+            sender.next()
         }
     }
 }

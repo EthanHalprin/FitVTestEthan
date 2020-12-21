@@ -15,10 +15,6 @@ class ViewModel {
     var stateMachine = EStateMachine()
     var exersices = [Exercise]()
     fileprivate var cancellable: AnyCancellable?
-    
-    required init() {
-        
-    }
 }
 
 extension ViewModel {

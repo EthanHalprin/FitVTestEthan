@@ -16,6 +16,8 @@ class SetupState: State {
             break
         case .practice:
             sender.next()
+        case .finish:
+            break
         }
     }
 }

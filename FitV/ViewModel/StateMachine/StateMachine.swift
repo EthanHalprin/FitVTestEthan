@@ -6,22 +6,6 @@
 //
 import Foundation
 
-
-enum StateType: Int {
-    case setup = 0
-    case resetup = 1
-    case practice = 2
-}
-
-protocol State {
-    func transit(to target: StateType, sender: StateRespondibleViewController) -> Void
-}
-
-protocol StateRespondibleViewController {
-    func next()
-    func prev()
-}
-
 class EStateMachine {
     
     var current = StateType.setup
@@ -29,28 +13,45 @@ class EStateMachine {
     
     init() {
         states.append(SetupState())
+        states.append(ResetupState())
         states.append(ExerciseState())
-        states.append(PresetupState())
-        
-        observe()
+        states.append(CompletedState())
+
+        fixObservers()
     }
     
-    func observe() {
+    fileprivate func fixObservers() {
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(correctCodeIn),
                                                name: .correctCodeDidEnter,
                                                object: nil)
-    }
 
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(userCompleted),
+                                               name: .userDidFinish,
+                                               object: nil)
+    }
+}
+
+extension EStateMachine {
+    
     @objc func correctCodeIn(notification: Notification) {
         if let vc = notification.object as? StateRespondibleViewController {
             states[current.rawValue].transit(to: .practice, sender: vc)
-            current = .practice
+            current = StateType.practice
+        }
+    }
+    
+    @objc func userCompleted(notification: Notification) {
+        if let vc = notification.object as? StateRespondibleViewController {
+            states[current.rawValue].transit(to: .finish, sender: vc)
+            current = StateType.finish
         }
     }
 }
 
 extension Notification.Name {
+    
     static let correctCodeDidEnter = Notification.Name("CorrectCodeDidEnter")
-    static let userdidPressStop    = Notification.Name("userdidPressStop")
+    static let userDidFinish = Notification.Name("UserDidFinish")
 }
